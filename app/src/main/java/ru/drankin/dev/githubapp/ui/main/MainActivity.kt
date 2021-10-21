@@ -1,7 +1,8 @@
-package ru.drankin.dev.githubapp
+package ru.drankin.dev.githubapp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.drankin.dev.githubapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
