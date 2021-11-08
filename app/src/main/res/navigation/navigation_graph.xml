@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listUserFragment">
+
+    <fragment
+        android:id="@+id/listUserFragment"
+        android:name="ru.drankin.dev.githubapp.ui.main.ListUserFragment"
+        android:label="ListUserFragment" >
+        <action
+            android:id="@+id/action_listUserFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
+        <action
+            android:id="@+id/action_listUserFragment_to_reposFragment"
+            app:destination="@id/reposFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="ru.drankin.dev.githubapp.ui.main.AddUserFragment"
+        android:label="AddUserFragment" />
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="ru.drankin.dev.githubapp.ui.main.ReposFragment"
+        android:label="ReposFragment" />
+</navigation>

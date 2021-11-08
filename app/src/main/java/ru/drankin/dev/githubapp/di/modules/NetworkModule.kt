@@ -5,15 +5,23 @@ import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.drankin.dev.githubapp.BuildConfig
+import ru.drankin.dev.githubapp.data.api.RepoApi
+import ru.drankin.dev.githubapp.data.datasource.UserDAO
+import ru.drankin.dev.githubapp.data.datasource.MainDatabase
+import ru.drankin.dev.githubapp.data.repository.RepoRepository
+import ru.drankin.dev.githubapp.data.repository.UserRepository
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class NetworkModule {
 
     @Provides
@@ -56,16 +64,15 @@ class NetworkModule {
         return GsonBuilder().create()
     }
 
-//    @Provides
-//    @Singleton
-//    fun getUsersApi(retrofit: Retrofit): UserApi {
-//        return retrofit.create(UserApi::class.java)
-//    }
+    @Provides
+    @Singleton
+    fun providesRepoApi(retrofit: Retrofit) : RepoApi {
+        return retrofit.create(RepoApi::class.java)
+    }
 
-//    @Provides
-//    @Singleton
-//    fun getUsersRepo(userApi: UserApi): UserRepository {
-//        return UserRepository(userApi)
-//    }
-
+    @Provides
+    @Singleton
+    fun providesRepoRepository(repoApi: RepoApi) : RepoRepository {
+        return RepoRepository(repoApi)
+    }
 }
