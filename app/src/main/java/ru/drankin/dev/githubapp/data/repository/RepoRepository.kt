@@ -6,6 +6,7 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Retrofit
 import ru.drankin.dev.githubapp.data.api.RepoApi
+import ru.drankin.dev.githubapp.data.model.Issue
 import ru.drankin.dev.githubapp.data.model.Repo
 
 class RepoRepository(private val repoApi: RepoApi, private val apiKeyRepository: ApiKeyRepository) {
@@ -21,6 +22,10 @@ class RepoRepository(private val repoApi: RepoApi, private val apiKeyRepository:
     suspend fun getRepos(userName : String) : List<Repo> {
         Log.d("abcd", "getRepos apiKey=${apiKey()}")
         return repoApi.getReposAsync(userName, apiKey()).await()
+    }
+
+    suspend fun getIssues(url: String) : List<Issue> {
+        return repoApi.getIssuesFromURL(url, apiKey()).await()
     }
 
     suspend fun getImageFromWeb(userName: String):ByteArray? {

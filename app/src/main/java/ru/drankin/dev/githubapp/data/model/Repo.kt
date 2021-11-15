@@ -1,6 +1,8 @@
 package ru.drankin.dev.githubapp.data.model
 
+import android.os.Parcelable
 import androidx.room.Entity
+import androidx.versionedparcelable.ParcelField
 
 @Entity
 data class Repo (

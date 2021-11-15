@@ -5,6 +5,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 import ru.drankin.dev.githubapp.data.model.GitUser
+import ru.drankin.dev.githubapp.data.model.Issue
 import ru.drankin.dev.githubapp.data.model.Repo
 import ru.drankin.dev.githubapp.data.repository.ApiKeyRepository
 
@@ -18,4 +19,7 @@ interface RepoApi {
 
     @GET
     fun getImageFromURL(@Url url: String, @Header("Authorization") apiKey : String): Call<ResponseBody>
+
+    @GET
+    fun getIssuesFromURL(@Url url: String, @Header("Authorization") apiKey : String): Deferred<List<Issue>>
 }

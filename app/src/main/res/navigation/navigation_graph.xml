@@ -25,9 +25,17 @@
     <fragment
         android:id="@+id/reposFragment"
         android:name="ru.drankin.dev.githubapp.ui.repos.ReposFragment"
-        android:label="ReposFragment" />
+        android:label="ReposFragment" >
+        <action
+            android:id="@+id/action_reposFragment_to_issuesFragment"
+            app:destination="@id/issuesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="ru.drankin.dev.githubapp.ui.settings.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/issuesFragment"
+        android:name="ru.drankin.dev.githubapp.ui.issues.IssuesFragment"
+        android:label="IssuesFragment" />
 </navigation>

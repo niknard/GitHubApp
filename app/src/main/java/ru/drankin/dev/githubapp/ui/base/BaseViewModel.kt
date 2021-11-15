@@ -38,6 +38,7 @@ enum class NavigateTo {
     TO_SETTINGS,
     TO_PREPAREDB,
     TO_BACK,
+    TO_ISSUES,
     TO_NOTHING
 }
 

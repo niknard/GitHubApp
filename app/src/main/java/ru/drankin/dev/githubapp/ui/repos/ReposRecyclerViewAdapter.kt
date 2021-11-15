@@ -30,10 +30,13 @@ class ReposRecyclerViewAdapter(var repos: List<Repo>): RecyclerView.Adapter<Repo
 
 
         fun bind(item: Repo){
-            itemView.setOnClickListener {
-                Log.d("abcd", "Common")
-                onItemClickListener?.onItemClick(ReposAdapterClickAction.GoToRepo, item)
+            if (item.open_issues>0){
+                itemView.setOnClickListener {
+                    Log.d("abcd", "Common")
+                    onItemClickListener?.onItemClick(ReposAdapterClickAction.GoToIssue, item)
+                }
             }
+
             name.text = item.name
             open_issuses.text = item.open_issues.toString()
             created_at.text = item.created_at
@@ -55,7 +58,5 @@ class ReposRecyclerViewAdapter(var repos: List<Repo>): RecyclerView.Adapter<Repo
 }
 
 enum class ReposAdapterClickAction {
-    EditButtonClick,
-    DeleteButtonClick,
-    GoToRepo
+    GoToIssue
 }
