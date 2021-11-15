@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/listUserFragment"
-        android:name="ru.drankin.dev.githubapp.ui.main.ListUserFragment"
+        android:name="ru.drankin.dev.githubapp.ui.listuser.ListUserFragment"
         android:label="ListUserFragment" >
         <action
             android:id="@+id/action_listUserFragment_to_addUserFragment"
@@ -14,13 +14,20 @@
         <action
             android:id="@+id/action_listUserFragment_to_reposFragment"
             app:destination="@id/reposFragment" />
+        <action
+            android:id="@+id/action_listUserFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
-        android:name="ru.drankin.dev.githubapp.ui.main.AddUserFragment"
+        android:name="ru.drankin.dev.githubapp.ui.adduser.AddUserFragment"
         android:label="AddUserFragment" />
     <fragment
         android:id="@+id/reposFragment"
-        android:name="ru.drankin.dev.githubapp.ui.main.ReposFragment"
+        android:name="ru.drankin.dev.githubapp.ui.repos.ReposFragment"
         android:label="ReposFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.drankin.dev.githubapp.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

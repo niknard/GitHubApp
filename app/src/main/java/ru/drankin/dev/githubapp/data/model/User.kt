@@ -1,5 +1,6 @@
 package ru.drankin.dev.githubapp.data.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,5 +8,7 @@ import androidx.room.PrimaryKey
 class User(
         @PrimaryKey(autoGenerate = true)
         var id: Int?,
-        var userName: String?
+        var userName: String?,
+        @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+        var photo: ByteArray? = null
     )

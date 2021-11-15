@@ -17,6 +17,10 @@ class UserRepository(private val userDAO: UserDAO) {
         return userDAO.getAllUsers()
     }
 
+    suspend fun getListOfAllUsers(): List<User> {
+        return userDAO.getListOfAllUsers()
+    }
+
     suspend fun delUser(user: User) {
         userDAO.delUser(user)
     }
@@ -25,4 +29,15 @@ class UserRepository(private val userDAO: UserDAO) {
         userDAO.delUserById(id)
     }
 
+    suspend fun prepareDB() {
+        userDAO.delAllUsers()
+        userDAO.addUser(User(null, "niknard", null))
+        userDAO.addUser(User(null, "mojombo", null))
+        userDAO.addUser(User(null, "maria", null))
+        userDAO.addUser(User(null, "alex", null))
+        userDAO.addUser(User(null, "gorner", null))
+        userDAO.addUser(User(null, "tomohawk", null))
+        userDAO.addUser(User(null, "toreo", null))
+        userDAO.addUser(User(null, "torik", null))
+    }
 }

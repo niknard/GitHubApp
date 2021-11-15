@@ -8,6 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ru.drankin.dev.githubapp.data.datasource.MainDatabase
 import ru.drankin.dev.githubapp.data.datasource.UserDAO
+import ru.drankin.dev.githubapp.data.repository.ApiKeyRepository
 import ru.drankin.dev.githubapp.data.repository.UserRepository
 import ru.drankin.dev.githubapp.ui.main.MainActivity
 import javax.inject.Singleton
@@ -19,6 +20,12 @@ class RepositoryModule() {
     @Singleton
     fun provideRoomDbInstance(@ApplicationContext appContext : Context): MainDatabase {
         return MainDatabase.getDatabase(appContext)
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiKeyRepository(@ApplicationContext appContext : Context): ApiKeyRepository {
+        return ApiKeyRepository(appContext)
     }
 
     @Provides

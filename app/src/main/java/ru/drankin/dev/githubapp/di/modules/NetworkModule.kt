@@ -15,6 +15,7 @@ import ru.drankin.dev.githubapp.BuildConfig
 import ru.drankin.dev.githubapp.data.api.RepoApi
 import ru.drankin.dev.githubapp.data.datasource.UserDAO
 import ru.drankin.dev.githubapp.data.datasource.MainDatabase
+import ru.drankin.dev.githubapp.data.repository.ApiKeyRepository
 import ru.drankin.dev.githubapp.data.repository.RepoRepository
 import ru.drankin.dev.githubapp.data.repository.UserRepository
 import java.util.concurrent.TimeUnit
@@ -72,7 +73,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesRepoRepository(repoApi: RepoApi) : RepoRepository {
-        return RepoRepository(repoApi)
+    fun providesRepoRepository(repoApi: RepoApi, apiKeyRepository: ApiKeyRepository) : RepoRepository {
+        return RepoRepository(repoApi, apiKeyRepository)
     }
 }

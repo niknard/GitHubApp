@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">GitHubApp</string>
+    <string name="app_name">GitHub Application</string>
     <string name="add_user_repositroy">Add user repositroy</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="user_name">User name:</string>
+    <string name="github_account">GitHub account:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
-    <string name="erroronreporequest">Ошибка при запросе списка репозиториев!</string>
+    <string name="erroronreporequest">Unable to request list of repositories!</string>
+    <string name="prepare_db">Prepare DB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="github_api_key">GitHub API key</string>
 </resources>

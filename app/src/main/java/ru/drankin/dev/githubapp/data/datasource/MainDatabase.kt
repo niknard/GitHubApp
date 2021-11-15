@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import ru.drankin.dev.githubapp.data.model.User
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class], version = 2, exportSchema = false)
 abstract class MainDatabase : RoomDatabase(){
 
     abstract fun userDao(): UserDAO

@@ -21,15 +21,5 @@ class MainActivity : AppCompatActivity() {
 
         var binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-//        binding.inf
-//        findNavController(R.id.contro)
-
-//        val viewModel: MainViewModel by viewModels()
-
-//        viewModel.getUserList().observe(this, Observer {
-//            val adapter = MainRecyclerViewAdapter(it)
-////            binding.recyclerView.adapter = adapter
-//        })
-
     }
 }

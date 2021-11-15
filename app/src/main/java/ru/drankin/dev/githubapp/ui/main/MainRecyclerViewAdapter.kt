@@ -1,6 +1,7 @@
 package ru.drankin.dev.githubapp.ui.main
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +46,14 @@ class MainRecyclerViewAdapter(var users: List<User>): RecyclerView.Adapter<MainR
             }
             userName.text = item.userName
 
-            itemView.findViewById<ImageView>(R.id.userPhoto).setImageResource(R.drawable.ic_baseline_person_outline_24)
+            val image = itemView.findViewById<ImageView>(R.id.userPhoto)
+            if (item.photo==null) {
+                image.setImageResource(R.drawable.ic_baseline_person_outline_24)
+            } else {
+                val bitmapUserPhoto = BitmapFactory.decodeByteArray(item.photo,0, item.photo!!.size)
+                image.setImageBitmap(bitmapUserPhoto)
+            }
+
         }
     }
 

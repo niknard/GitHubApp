@@ -63,6 +63,9 @@ dependencies {
 
     def hiltVersion = "2.40"
 
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //Binding
     implementation 'androidx.databinding:databinding-runtime:7.0.3'
 

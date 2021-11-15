@@ -16,9 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="@string/github_account" />
+            android:text="@string/github_api_key" />
         <EditText
-            android:id="@+id/editUserName"
+            android:id="@+id/apiKey"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
